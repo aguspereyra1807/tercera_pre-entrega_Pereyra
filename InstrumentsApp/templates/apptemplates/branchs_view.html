@@ -1,0 +1,40 @@
+{% extends 'apptemplates/base.html' %}
+{% load static %}
+
+
+{% block title %}
+<div class="col-12">
+    <form style="margin: auto; width: 220px;" class="row row-cols-lg-auto g-3 align-items-center" action="/branch_search" method="get">
+                {% csrf_token %} 
+        <h4 class="display-7 fw-bolder text-black mb-2">Buscar sucursal: </h4>
+            <p>
+                <input type="text" name="search" id="search"> 
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </p>
+</div> 
+{% endblock title %}
+    
+
+{% block body %}
+    <table style="margin: 0px auto;width:35%" class="table table-striped-columns" style=>
+        <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Provincia</th>
+            <th>Dirección</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+
+    {% for i in branchs %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.province }}</td>
+            <td>{{ i.address }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+
+{% endblock body %}
+    

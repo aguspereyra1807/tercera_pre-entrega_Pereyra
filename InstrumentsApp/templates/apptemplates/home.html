@@ -1,0 +1,36 @@
+{% extends 'apptemplates/base.html' %}
+
+
+{% block title %}
+<div class="text-center my-5">
+    <h3 class="display-5 fw-bolder text-black mb-2">Inicio</h3>
+</div>
+{% endblock title %}
+    
+
+{% block body %}
+<section class="py-5 border-bottom" id="{% url 'home' %}">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-6 mb-5 mb-lg-">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                <h2 class="h4 fw-bolder">Venta de instrumentos</h2>
+                <p>Tenemos a la venta una gran variedad de instrumentos, de marcas desde Gibson hasta Stradivarius. Encontrarás de todo tipo, viento, cuerdas y percusión.</p>
+                <a class="text-decoration-none" href="{% url 'instruments' %}">
+                    Ver instrumentos
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                <h2 class="h4 fw-bolder">Nuestras sucursales</h2>
+                <p>Tenemos sucursales distribuidas por todo el país, y cada vez somos mas!</p>
+                <a class="text-decoration-none" href="{% url 'branchs' %}">
+                    Ver sucursales
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+          
+</section>
+{% endblock body %}
+    

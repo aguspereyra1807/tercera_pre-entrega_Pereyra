@@ -1,0 +1,18 @@
+{% extends 'D:/CODERHOUSE Python/Pre-entrega III/Instrument4Sale/InstrumentsApp/templates/apptemplates/base.html' %}
+{% load static %}
+
+
+{% block title %}
+<div class="text-center my-5">
+    <h3 class="display-7 fw-bolder text-black mb-2">Menú de Staff</h3>
+</div>
+{% endblock title %}
+
+{% block body %}
+<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+    <a class="btn btn-outline-dark btn-lg px-4" href="{% url 'InstrumentsStaff:add_instrument' %}">Agregar instrumento</a>
+    <a class="btn btn-outline-dark btn-lg px-4" href="{% url 'InstrumentsStaff:add_client' %}">Agregar cliente</a>
+    <a class="btn btn-outline-dark btn-lg px-4" href="{% url 'InstrumentsStaff:add_branch' %}">Agregar sucursal</a>
+</div>
+{% endblock body %}
+    

@@ -1,0 +1,49 @@
+{% extends 'apptemplates/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+<div class="col-12">
+    <form style="margin: auto; width: 220px;" class="row row-cols-lg-auto g-3 align-items-center" action="/instruments_search" method="get">
+                {% csrf_token %} 
+        <h4 class="display-7 fw-bolder text-black mb-2">Buscar modelo: </h4>
+            <p>
+                <input type="text" name="search" id="search"> 
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </p>
+</div> 
+{% endblock title %}
+
+
+
+{% block body %}
+    
+    <table style="margin: 0px auto;width:50%" class="table table-striped-columns" style=>
+        <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Tipo de instrumento</th>
+            <th>Modelo</th>
+            <th>Precio (US$)</th>
+            <th>En stock</th>
+
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+
+    {% for i in models %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.type }}</td>
+            <td>{{ i.model }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.inStock }}</td>
+        </tr>
+
+    {% endfor %}
+    </table>
+
+
+{% endblock body %}
+    

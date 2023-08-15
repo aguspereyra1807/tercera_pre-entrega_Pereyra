@@ -1,0 +1,23 @@
+{% extends 'D:/CODERHOUSE Python/Pre-entrega III/Instrument4Sale/InstrumentsApp/templates/apptemplates/base.html' %}
+{% load static %}
+
+
+{% block title %}
+<div class="text-center my-5">
+    <h3 class="display-7 fw-bolder text-black mb-2">Agregar una sucursal</h3>
+</div>
+{% endblock title %}
+
+{% block body %}
+
+<form style="margin: 0px 800px;width:60%" class="row gy-2 gx-3 align-items-center"  action=""method="post">
+    <div class="col-auto">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}    
+        </table>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+{% endblock body %}
+    
